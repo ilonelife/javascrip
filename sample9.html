@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>숫자 더히기</title>
+
+    </head>
+    <body id="body">
+        <div>
+            <button id="btn">이미지 바꾸기</button>
+            <button id="btn2">스타일 바꾸기</button>
+            <button id="btn3">테두리</button><br/>
+            <img id="photo" src="1.jpg" style="width: 100%;">
+        </div>
+
+    </body>
+    <script>
+
+        const photo = document.getElementById("photo");
+        var old_img = photo.src;
+
+        document
+            .getElementById("btn")
+            .addEventListener("click", function () {
+
+                if (photo.src == old_img) {
+                    photo.src = "3.jpeg";
+                } else {
+                    photo.src = "1.jpg";
+                }
+
+            });
+
+        document
+            .getElementById("btn2")
+            .addEventListener('click', function () {
+                photo.style.width = "50%";
+            })
+
+        document
+            .getElementById("btn3")
+            .addEventListener('click', function () {
+                photo.style.border = "3px solid #ddd";
+            })
+    </script>
+
+</html>
