@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>숫자 더히기</title>
+    </head>
+    <body>
+
+        <button id="btn">숫자 입력</button>
+        <p id="sum">답은
+        </p>
+
+        <script>
+
+            const btn = document.getElementById('btn');
+            const sum = document.getElementById('sum');
+
+            btn.addEventListener('click', function () {
+
+                test();
+
+            })
+
+            function test() {
+                var number = prompt('숫자를 입력하세요');
+                var string = '';
+                number = Number(number);
+
+                if (isNaN(number)) {
+                    test();
+                } else {
+                    for (var i = 0; i < number; i++) {
+                        if ((i % 3) == 0) {
+                            string += "<span style='color:red'>" + i + "</span>"+ ' ';
+                        } else {
+                            string += i + ' ';
+                        }
+
+                    }
+                    sum.innerHTML = string;
+                }
+            }
+        </script>
+
+    </body>
+</html>
