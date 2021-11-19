@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sample5</title>
+    </head>
+    <style>
+        button {
+            background-color: black;
+            color: white;
+            padding: 30px;
+            width: 200px;
+            border: "1" solid;
+        }
+
+        .origin {
+            background-color: black;
+            color: white;
+        }
+
+        .choice {
+            background-color: white;
+            color: black;
+        }
+    </style>
+
+    <body>
+
+        <div>
+            <button class="origin" id="html" value="html">html</button>
+            <button class="origin" id="css" value="css">css</button>
+            <button class="origin" id="javascript" value="javascript">javascript</button>
+        </div>
+
+    </body>
+
+    <script>
+
+        document
+            .getElementById("html")
+            .addEventListener('click', function () {
+
+                changebutton(document.getElementById("html").value);
+            })
+
+            document
+            .getElementById("css")
+            .addEventListener('click', function () {
+
+                changebutton(document.getElementById("css").value);
+            })
+
+            document
+            .getElementById("javascript")
+            .addEventListener('click', function () {
+
+                changebutton(document.getElementById("javascript").value);
+            })
+
+        function changebutton(name) {
+
+            console.log(name);
+
+            allchange();
+
+            document.getElementById(name).className = "choice";
+        }
+
+        function allchange() {
+            document.getElementById("html").className = "origin";
+            document.getElementById("css").className ="origin";
+            document.getElementById("javascript").className ="origin";
+        }
+
+    </script>
+
+</html>

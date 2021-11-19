@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sample5</title>
+    </head>
+    <style>
+        #red {
+            background-color: red;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+    </style>
+
+    <body>
+
+
+            <div>
+                <p id='text'></p>
+                <br/><br/><br/> 
+            </div>
+
+            <div id='btn'>
+                <button id="red">빨강</button>
+                <button id="blue">파랑</button>
+                <button id="green">녹색</button>
+            </div> 
+
+
+    </body>
+
+    <script>
+
+        document.getElementById('btn').style.display = "none";
+
+        getName();
+
+        function getName() {
+            var name = prompt("이름을 입력해 주세요");
+
+            if (name == "") {
+                alert("이름이 없어요")
+                getName();
+            } else {
+                document.getElementById("text").innerHTML = name;
+                document.getElementById('btn').style.display = "block";
+            }
+        }
+
+        document.getElementById("red").addEventListener('click', function() {
+            document.getElementById("text").style.color = "red";
+        })
+
+        document.getElementById("blue").addEventListener('click', function() {
+            document.getElementById("text").style.color = "blue";
+        })
+
+        document.getElementById("green").addEventListener('click', function() {
+            document.getElementById("text").style.color = "green";
+        })
+
+
+
+    </script>
+
+</html>
