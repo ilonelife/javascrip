@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sample5</title>
+    </head>
+    <style></style>
+
+    <body id="body">
+
+        <input type="text" id="search" placeholder="검색어를 입력해 주세요">
+        <br/><br/>
+        <button id="naver">네이버</button>
+        <button id="google">구글</button>
+        <button id="daum">다음</button>
+
+    </body>
+
+    <script>
+
+        document
+            .getElementById("naver")
+            .addEventListener("click", function () {
+                let search = document
+                    .getElementById("search")
+                    .value;
+
+                document.location.href = "https://search.naver.com/search.naver?query=" +
+                        search;
+            })
+
+        document
+            .getElementById("google")
+            .addEventListener("click", function () {
+                let search = document
+                    .getElementById("search")
+                    .value;
+
+                document.location.href = "https://www.google.com/search?q=" + search;
+
+            })
+
+        document
+            .getElementById("daum")
+            .addEventListener("click", function () {
+                let search = document
+                    .getElementById("search")
+                    .value;
+
+                document.location.href = "https://search.daum.net/search?q=" + search;
+
+            })
+    </script>
+
+</html>
