@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sample5</title>
+    </head>
+    <style>
+        div {
+            background-color: tomato;
+            display: inline-block;
+            color: white;
+            text-align: center;
+            font-size: 1rem;
+            border: 2px solid black;
+        }
+
+        .type1 {
+            width: 600px;
+            height: 200px;
+        }
+
+        .type2 {
+            width: 200px;
+            height: 600px;
+        }
+
+        #div1 {
+            background-color: blue;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            line-height: 600px;
+        }
+
+        #div2 {
+            background-color: yellow;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            line-height: 200px;
+        }
+
+        #div3 {
+            background-color: red;
+            position: absolute;
+            top: 200px;
+            right: 0;
+            z-index: 2;
+            line-height: 600px;
+        }
+
+        #div4 {
+            background-color: green;
+            position: absolute;
+            top: 600px;
+            left: 0;
+            z-index: 1;
+            line-height: 200px;
+        }
+
+        #div5 {
+            background-color: white;
+            overflow: auto;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            width: 400px;
+            height: 400px;
+            z-index: 1;
+        }
+    </style>
+
+    <body>
+        <button id="btn">테이블 생성</button>
+        <br/>
+
+    </body>
+
+    <script>
+        document
+            .getElementById('btn')
+            .addEventListener('click', function () {
+                table_create();
+            })
+
+        function table_create() {
+            let col = Number(prompt("칸을 입력하세요"));
+            let row = Number(prompt("줄을 입력하세요"));
+
+            let html_code = '';
+
+            if (isNaN(col) || isNaN(row)) {
+                alert("숫자만 입력하세요");
+                table_create();
+            } else if (col <= 0 || row <= 0) {
+                alert(" 0 이상 숫자를 입력하세요");
+                table_create();
+
+            } else {
+
+                console.log(col, row);
+                html_code = "<table border='1' solid #ff0 id='table'>";
+
+                for (var i = 0; i < row; i++) {
+                    html_code += "<tr>";
+                    for (var j = 0; j < col; j++) {
+                        html_code += "<td>1</td>";
+                    }
+                    html_code += "</tr>";
+                }
+                html_code += "</table>";
+
+                console.log(html_code);
+                document.write(html_code);
+
+            }
+        }
+    </script>
+
+/*  강의 버전 
+    <script>
+
+        document.getElementById("btn").addEventListener("click", function(){
+
+            intputnum();
+        })
+
+        function inputnum() {
+            let cols = prompt("몇 칸 만들까요?");
+            let rows = prompt("몇 줄 만들까요");
+
+            cols = Number(cols);
+            rows = Number(rows);
+
+            if (isNaN(cols) || isNaN(rows)) {
+                alert("");
+                intputnum();
+            } else if (cols <=0 || rows <= 0) {
+                alert("");
+                inputnum();
+            } else {
+                makeTable(cols, rows);
+            }
+        }
+
+        function makeTable(cols, rows) {
+
+            console.log("행 : " + cols + "열 :" + rows);
+
+            let table = "<table border='1'>";
+
+            for (let i = 0; i< rows; i++) {
+                table = table+ '<tr>';
+                
+                for (let j = 0; j < cols; j++) {
+                    table = table + '<td>칸</td>';
+                }
+                table = table+ '</tr>';
+            }
+
+            table = table+ '</table'>
+
+            document.write();
+        }
+
+    </script>
+    */
+
+</html>
