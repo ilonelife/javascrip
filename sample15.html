@@ -3,7 +3,9 @@
     <head>
         <title>sample5</title>
     </head>
-    <style></style>
+    <style>
+
+    </style>
 
     <body id="body">
 
@@ -17,38 +19,26 @@
 
     <script>
 
-        document
-            .getElementById("naver")
-            .addEventListener("click", function () {
-                let search = document
-                    .getElementById("search")
-                    .value;
 
-                document.location.href = "https://search.naver.com/search.naver?query=" +
-                        search;
-            })
+        document.getElementById("naver").addEventListener("click", function() {
+            let search = document.getElementById("search").value;
 
-        document
-            .getElementById("google")
-            .addEventListener("click", function () {
-                let search = document
-                    .getElementById("search")
-                    .value;
+            document.location.href = "https://search.naver.com/search.naver?query=" + search;
+        })
 
-                document.location.href = "https://www.google.com/search?q=" + search;
+        document.getElementById("google").addEventListener("click", function() {
+            let search = document.getElementById("search").value;
 
-            })
+            document.location.href = "https://www.google.com/search?q=" + search;
 
-        document
-            .getElementById("daum")
-            .addEventListener("click", function () {
-                let search = document
-                    .getElementById("search")
-                    .value;
+        })
 
-                document.location.href = "https://search.daum.net/search?q=" + search;
+        document.getElementById("daum").addEventListener("click", function() {
+            let search = document.getElementById("search").value;
 
-            })
+            document.location.href = "https://search.daum.net/search?q=" + search;
+
+        })
     </script>
 
 </html>
